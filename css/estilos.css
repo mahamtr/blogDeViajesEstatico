@@ -1,0 +1,235 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /*Reset para REMS ahora en lugar de 16px se tiene una base de 10px*/
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+/** Globales **/
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+img{
+    max-width: 100%;
+}
+p {
+    font-size: 1.6rem;
+    line-height: 2;
+    margin-top: 0;
+}
+/**Utilidades**/
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 95%;
+}
+
+/**Botones**/
+.btn{
+    color: white;
+    background: #00B8E4;
+    padding: 1.2rem;;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    display: block;
+    border-radius: .5rem;
+    text-align: center;
+    flex: 0 0 100%;
+    transition: background-color .3s ease-in-out;
+    text-transform: uppercase;
+}
+@media (min-width: 768px){
+    .btn{
+        display: inline-block;
+    }   
+}
+.btn:hover{
+    background: rgb(1, 135, 168);
+}
+/**Header**/
+.site-header{
+    padding: 20px 0;
+}
+/** navegacion responsive**/
+.barra{
+    overflow: hidden;
+}
+.mobile-menu{
+    color: white;
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+    padding: 2rem 0;
+}
+.navegacion-principal{
+    max-height: 0;
+    transition: 0.8s;
+}
+#nav:target{
+    max-height: 80rem;
+}
+@media (min-width: 768px){
+    .navegacion-principal{
+        max-height: unset;
+    }
+    .mobile-menu,
+    .cerrar{
+        display: none!important;
+    }
+
+}
+/** Navegacion **/
+.barra{
+    margin-top: 4rem;
+    background-color: #DB008B;
+}
+.navegacion-principal a{
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+@media (min-width: 768px){
+    .navegacion-principal a{
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .navegacion-principal a:last-of-type{
+        margin-right: 0;
+    }
+}
+.navegacion-principal a:hover{
+    background-color: #00B8E4;
+}
+/** Contenido principal **/
+.contenido-principal
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+.blog,
+.sidebar{
+    flex: 0 0 100%;
+}
+
+@media (min-width: 768px){
+    .contenido-principal{
+        justify-content: space-between;
+        
+    }
+    .blog{
+        flex-basis: 66.6%;
+    }
+    .sidebar{
+        flex-basis: calc(33.3% - 1rem);
+        text-align: left;
+    }
+}
+
+/** Contenido principal**/
+h2{
+    color: #00B8E4;
+    margin-bottom: 20px;
+    text-align: left    ;
+    font-size: 2.5rem;
+}
+.entrada-blog{
+    margin-top: 3rem;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+.entrada-blog:last-of-type{
+    border-bottom: none;
+}
+.contenido-blog{
+    margin: 0;
+    
+}
+.entrada-blog{
+    display: block;
+}
+.contenido-blog p{
+    text-align: justify;
+}
+@media (min-width: 500px){
+    .entrada-blog{
+        display: flex;
+        justify-content: space-between;
+    }
+    .entrada-blog .imagen{
+        flex: 0 0 40%;
+    }
+    .entrada-blog .contenido-blog{
+        flex: 0 0 calc(60% - 2rem);
+    }
+          
+}
+/** Side-bar **/
+
+.entradas{
+    list-style: none;
+    padding: 0;
+}
+.entradas a{
+    color:#00B8E4;
+    text-decoration: none;
+    display: inline-block;
+    padding: .8rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.entradas a:hover{
+    background-color: #00B8E4;
+    color: white;
+}
+/* Footer */
+.footer-site{
+    background-color: #DB008B;
+    padding-top: 4rem;
+    margin-top: 6rem;
+    color: white;
+    text-align: center;
+}
+.footer-site h2{
+    color: white;
+    text-align: center;
+}
+.footer-site a{
+    color: white;
+    text-decoration: none;
+    font-size: 2.2rem;
+    margin-right: 1rem;
+}
+.footer-site a:last-of-type{
+    margin-right: 0;
+}
+.footer-site .copyrigth{
+    margin: 5rem 0 0 0;
+    background-color: rgb(168, 0, 107);
+    padding: 1rem;
+}
+@media (min-width: 768px){
+    .footer-site .contenedor{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .footer-site .nosotros{
+        flex: 0 0 40%;
+        text-align: left;
+    }
+    .footer-site .nosotros h2{
+        text-align: left;
+    }
+    .footer-site .menu{
+        flex: 0 0 60%;
+        text-align: end;
+    }
+    .footer-site .menu h2{
+        text-align: end;
+    }
+}
